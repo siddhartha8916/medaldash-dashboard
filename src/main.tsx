@@ -8,11 +8,11 @@ import { Dashboard } from "./components/app/dashboard.tsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Dashboard />,
   },
   {
-    path: "/dashboard",
-    element: <Dashboard />,
+    path: "/app",
+    element: <App />,
   },
 ]);
 
