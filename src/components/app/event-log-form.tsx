@@ -17,6 +17,14 @@ import { format } from "date-fns";
 import React from "react";
 import { Calendar } from "../ui/calendar";
 import { Checkbox } from "../ui/checkbox";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
 
 export default function EventLogForm() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
@@ -42,6 +50,20 @@ export default function EventLogForm() {
               <div className="flex items-center gap-2">
                 <Label>Age</Label>
                 <Input placeholder="Age" />
+              </div>
+              <div className="flex items-center gap-2">
+                <Label>Gender</Label>
+                <Select>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select Gender" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      <SelectItem value="male">Male</SelectItem>
+                      <SelectItem value="female">Female</SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
               </div>
             </form>
           </CardContent>
