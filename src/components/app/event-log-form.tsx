@@ -28,10 +28,10 @@ import {
 export default function EventLogForm() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
   return (
-    <div className="mx-auto overflow-auto">
+    <div className="mx-auto overflow-auto bg-app_white">
       <Card className="mb-2">
         <CardHeader className="pb-2">
-          <CardTitle className="text-3xl">
+          <CardTitle className="text-3xl text-app_primary">
             GODZILLA X KONG: THE TITAN CHALLENGE: 5K/10K/13.1
           </CardTitle>
           <CardDescription>
@@ -239,7 +239,7 @@ export default function EventLogForm() {
           </CardContent>
         </Card>
         <div className="flex justify-between">
-          <Button>Submit Details</Button>
+          <Button className="bg-app_primary">Submit Details</Button>
         </div>
       </div>
     </div>

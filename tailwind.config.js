@@ -20,12 +20,27 @@ module.exports = {
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
+        ring: "#4ECDC4",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+        },
+        app_primary: {
+          DEFAULT: "#1A535C",
+        },
+        app_secondary: {
+          DEFAULT: "#4ECDC4",
+        },
+        app_yellow: {
+          DEFAULT: "#FFE66D",
+        },
+        app_red: {
+          DEFAULT: "#FF6B6B",
+        },
+        app_white: {
+          DEFAULT: "#F7FFF7",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

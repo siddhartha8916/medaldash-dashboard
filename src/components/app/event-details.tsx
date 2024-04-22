@@ -1,6 +1,3 @@
-import { ListFilter } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -8,14 +5,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -41,26 +30,6 @@ export default function EventDetails() {
                 <TabsTrigger value="10k">10K</TabsTrigger>
                 <TabsTrigger value="13.5">13.5</TabsTrigger>
               </TabsList>
-              <div className="ml-auto flex items-center gap-2">
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="h-7 gap-1 text-sm"
-                    >
-                      <ListFilter className="h-3.5 w-3.5" />
-                      <span className="sr-only sm:not-sr-only">Export</span>
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end">
-                    <DropdownMenuLabel>Export to</DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>CSV</DropdownMenuItem>
-                    <DropdownMenuItem>Excel</DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </div>
             </div>
             <TabsContent value="5k">
               <FiveKData />

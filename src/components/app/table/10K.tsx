@@ -82,7 +82,22 @@ const TenKData = () => {
                       <TableCell className="hidden md:table-cell">
                         {participant.total_time_taken}
                       </TableCell>
-                      <DialogTrigger asChild>
+                      {participant.segments &&
+                      participant?.segments?.length > 0 ? (
+                        <DialogTrigger asChild>
+                          <TableCell className="hidden md:table-cell cursor-pointer">
+                            <Badge className="text-xs" variant="secondary">
+                              {participant?.segments?.length > 0
+                                ? participant.segments?.length
+                                : 1}
+                              {participant.segments &&
+                                participant?.segments?.length > 0 && (
+                                  <ChevronsUpDown className="w-3 h-3 ml-2" />
+                                )}
+                            </Badge>
+                          </TableCell>
+                        </DialogTrigger>
+                      ) : (
                         <TableCell className="hidden md:table-cell cursor-pointer">
                           <Badge className="text-xs" variant="secondary">
                             {participant.segments &&
@@ -95,7 +110,7 @@ const TenKData = () => {
                               )}
                           </Badge>
                         </TableCell>
-                      </DialogTrigger>
+                      )}
                       <TableCell className="hidden sm:table-cell">
                         <div className="flex items-center gap-x-2">
                           <CircularProgressBar
