@@ -28,7 +28,7 @@ import {
 export default function EventLogForm() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
   return (
-    <div className="mx-auto overflow-auto bg-app_white">
+    <div className="mx-auto overflow-auto">
       <Card className="mb-2">
         <CardHeader className="pb-2">
           <CardTitle className="text-3xl text-app_primary">
