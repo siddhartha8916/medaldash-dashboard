@@ -1,3 +1,6 @@
+import { ListFilter } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -5,23 +8,116 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+import { ThreeDCardDemo } from "../common/event-card";
+import { AnimatedTooltip } from "../common/animated-tooltip";
+import FiveKData from "./table/5k";
+import { people } from "@/data";
+import TenKData from "./table/10K";
+import AppHeader from "../common/header";
 
 export default function EventDetails() {
   return (
-    <Card className="mb-2">
-      <CardHeader className="pb-2">
-        <CardTitle className="text-3xl">
-          GODZILLA X KONG: THE TITAN CHALLENGE: 5K/10K/13.1
-        </CardTitle>
-        <CardDescription>
-          Rise together or fall alone. embark on an epic journey like no other
-          as you unite with fellow participants and step into the monsterverse
-          with godzilla and kong!
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="text-sm text-muted-foreground">Event Period: APR. 1 - DEC. 31</div>
-      </CardContent>
-    </Card>
+    <AppHeader>
+      <div className="grid grid-cols-5 px-5">
+        <div className="">
+          <ThreeDCardDemo />
+        </div>
+        <div className="col-span-3">
+          <Tabs defaultValue="5k" className="p-5">
+            <div className="flex items-center">
+              <TabsList>
+                <TabsTrigger value="5k">5K</TabsTrigger>
+                <TabsTrigger value="10k">10K</TabsTrigger>
+                <TabsTrigger value="13.5">13.5</TabsTrigger>
+              </TabsList>
+              <div className="ml-auto flex items-center gap-2">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="h-7 gap-1 text-sm"
+                    >
+                      <ListFilter className="h-3.5 w-3.5" />
+                      <span className="sr-only sm:not-sr-only">Export</span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuLabel>Export to</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>CSV</DropdownMenuItem>
+                    <DropdownMenuItem>Excel</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
+            </div>
+            <TabsContent value="5k">
+              <FiveKData />
+            </TabsContent>
+            <TabsContent value="10k">
+              <TenKData />
+            </TabsContent>
+          </Tabs>
+        </div>
+        <div className="flex flex-col gap-y-5 mt-16">
+          <div>
+            <Card>
+              <CardHeader>
+                <CardTitle>Top Performers - 5K</CardTitle>
+                <CardDescription>
+                  GODZILLA X KONG: THE TITAN CHALLENGE 5K
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-row items-center justify-center">
+                  <AnimatedTooltip items={people} />
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          <div>
+            <Card>
+              <CardHeader>
+                <CardTitle>Top Performers - 10K</CardTitle>
+                <CardDescription>
+                  GODZILLA X KONG: THE TITAN CHALLENGE 10K
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-row items-center justify-center">
+                  <AnimatedTooltip items={people} />
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          <div>
+            <Card>
+              <CardHeader>
+                <CardTitle>Top Performers - 13.1</CardTitle>
+                <CardDescription>
+                  GODZILLA X KONG: THE TITAN CHALLENGE 13.1
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-row items-center justify-center">
+                  <AnimatedTooltip items={people} />
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </AppHeader>
   );
 }

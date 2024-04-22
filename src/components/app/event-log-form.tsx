@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "../ui/label";
-import EventDetails from "./event-details";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { cn } from "@/lib/utils";
@@ -30,7 +29,23 @@ export default function EventLogForm() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
   return (
     <div className="mx-auto overflow-auto">
-      <EventDetails />
+      <Card className="mb-2">
+        <CardHeader className="pb-2">
+          <CardTitle className="text-3xl">
+            GODZILLA X KONG: THE TITAN CHALLENGE: 5K/10K/13.1
+          </CardTitle>
+          <CardDescription>
+            Rise together or fall alone. embark on an epic journey like no other
+            as you unite with fellow participants and step into the monsterverse
+            with godzilla and kong!
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="text-sm text-muted-foreground">
+            Event Period: APR. 1 - DEC. 31
+          </div>
+        </CardContent>
+      </Card>
       <div className="grid grid-cols-2 gap-2">
         <Card className="col-span-2">
           <CardHeader>
